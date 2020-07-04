@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>系统管理系统登录</title>
+<link th:href="@{/css/base.css}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+
+</head>
+<body>
+	<img class="bgimg" th:src="@{/jpg/6402.jpg}" width="10%" />
+	<form id="loginForm" th:action="@{/allPage}" th:object="${model}" method="post" onsubmit="return checkForm()">
+	<div class="logincontent animation" id="logincontent">
+	 <div class="top"></div>
+	 <div class="con">
+	  <span class="font">用户名：</span>
+	  <span class="input"><input id="username" name="j_username" placeholder="请输入用户名" type="text" /></span><br />
+	  <span class="font">密码：</span>
+	  <span class="input"><input id="password" name="j_password" placeholder="请输入密码" type="password" /></span><br />
+      <span class="font" th:unless="${login_status}" th:text="${login_msg}"></span>
+	  <br />
+	 </div>
+	 <div class="bottombtn">
+		<input type="submit" class="btnlefnt float-l" value="提 交" />
+	 </div>
+	</div>
+	</form>
+</body>
+</html>
